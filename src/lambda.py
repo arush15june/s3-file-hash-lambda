@@ -34,7 +34,7 @@ def handler(event, context):
         obj_data = s3_obj.get('Body').read()
         logger.info(f'Loaded object {key} into memory.')
 
-        db_filename = f'{bucket}-{key}'
+        db_filename = f'{bucket}_{key}'
         item_data = {
                 'filename': {'S': db_filename},
             }
